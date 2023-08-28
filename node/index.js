@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 const morgan = require("morgan");
 
-// const Note = require("./models/note");
+const Test = require("./models/model");
 
 // // Middleware stack
 app.use(express.json()); // create request.body json object
