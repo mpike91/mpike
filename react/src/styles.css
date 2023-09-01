@@ -6,19 +6,58 @@
 
 body {
   font-family: sans-serif;
-  margin: 100px 200px;
+  margin: 100px 150px;
   position: relative;
-  color: #444;
+  color: #3f3f46;
+  background-color: #fafafa;
 }
 
-div {
+.app {
+  background-color: #e4e4e7;
+  padding: 25px;
+  border: 1px solid #a1a1aa;
+  border-radius: 5px;
+  box-shadow: 4px 4px 3px #a1a1aa;
+}
+
+.main {
   text-align: center;
-  margin: 10px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 7px;
+}
+
+input {
+  display: block;
+  text-align: center;
+  margin: 7px auto;
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid #a1a1aa;
+  background-color: #fafafa;
 }
 
 button {
-  padding: 4px;
-  border: 1px #444 solid;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid #a1a1aa;
+  background-color: #fafafa;
+  color: #3f3f46;
   cursor: pointer;
+}
+
+.app-list > * {
+  display: block;
+  margin: 10px auto;
+}
+
+.logout {
+  margin-top: 20px;
+  background-color: #3f3f46;
+  color: #fafafa;
 }

@@ -1,44 +1,57 @@
 import { useState } from "react";
 
 function App() {
+  return (
+    <div className="app">
+      <MainMenu />
+    </div>
+  );
+}
+
+function MainMenu() {
   const [loggedIn, setLoggedIn] = useState(false);
 
+  function handleLogin() {
+    setLoggedIn((log) => !log);
+  }
+
   return (
-    <div>
-      <h1>Project Sandbox</h1>
+    <div className="main">
       {loggedIn ? (
-        <MainMenu setLoggedIn={setLoggedIn} />
+        <AppList handleLogin={handleLogin} />
       ) : (
-        <Login setLoggedIn={setLoggedIn} />
+        <LoginForm handleLogin={handleLogin} />
       )}
     </div>
   );
 }
 
-function Login({ setLoggedIn }) {
+function LoginForm({ handleLogin }) {
   return (
-    <div>
-      <h3> Please login, or continue as guest.</h3>
-      <div>
-        <button>Login</button>
-      </div>
-      <div>
-        <button onClick={() => setLoggedIn((log) => !log)}>
-          Continue as Guest
-        </button>
-      </div>
-    </div>
+    <>
+      <h1>Project Sandbox</h1>
+      <form className="login">
+        <input placeholder="Username"></input>
+        <input placeholder="Password"></input>
+        <button onClick={(e) => e.preventDefault()}>Login</button>
+      </form>
+
+      <button onClick={handleLogin}>Continue As Guest</button>
+    </>
   );
 }
 
-function MainMenu({ setLoggedIn }) {
+function AppList({ handleLogin }) {
   return (
-    <div>
-      <h3>Main Menu</h3>
-      <div>
-        <button onClick={() => setLoggedIn((log) => !log)}>Logout</button>
+    <>
+      <h1>App List</h1>
+      <div className="app-list">
+        <button>Tic Tac Toe</button>
+        <button className="logout" onClick={handleLogin}>
+          Log Out
+        </button>
       </div>
-    </div>
+    </>
   );
 }
 
